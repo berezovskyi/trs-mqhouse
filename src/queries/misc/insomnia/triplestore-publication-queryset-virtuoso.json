@@ -1,0 +1,577 @@
+{
+  "_type": "export",
+  "__export_format": 1,
+  "__export_date": "2016-08-01T08:35:27.724Z",
+  "__export_source": "insomnia.chrome.app:v2.6.11",
+  "items": [
+    {
+      "_type": "request_group",
+      "_id": "grp_1469288470066",
+      "name": "TripleStore-Publication-querySet-virtuoso",
+      "environments": {},
+      "requests": [
+        {
+          "_type": "request",
+          "_id": "req_1469778194771",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT DISTINCT ?s  WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER regex(str(?s), \"/changeRequests/\") . }      }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "SELECT ALL change requests"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778231965",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT ( COUNT(DISTINCT ?g) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"bugzilla\")) }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "Number of change requests"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778236235",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT ( COUNT(*) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o     } }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "number of trips"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778240686",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT ( COUNT(DISTINCT ?g) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"simulink\")) }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "number of simulink resources"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778284661",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT ( COUNT(DISTINCT ?g) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o     } }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "number of graphs"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778288816",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>   select ?implemented_req where  { FILTER NOT EXISTS { ?implemented_req oslc_rm:validatedBy ?test_case } { SELECT DISTINCT ?implemented_req   WHERE  {  GRAPH ?g    {  ?component ?implements ?implemented_req .FILTER (regex(str(?implements), \"implements\")) . }      } } }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "requests that changed component x"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778293580",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT DISTINCT ?s ?p ?o WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER (regex(str(?o), \"changeRequests/11\") && regex(str(?p), \"changed_by\")) . }      }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "components changed by request x"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778301147",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT DISTINCT ?s  WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER (regex(str(?p), \"changed_by\")) . }      }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "components changed by some request"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778311323",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT DISTINCT ?s WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER (regex(str(?p), \"changes\")) . }      }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "requests that change some component"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778313543",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "DESCRIBE ?s  WHERE  {  GRAPH ?g   { ?s ?p ?o }      }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "DESCRIBE ALL"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469778316051",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "CONSTRUCT {?s ?p ?o} WHERE  {  GRAPH ?g   { ?s ?p ?o }      }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "CONSTRUCTALL"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469779467327",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT ( COUNT(DISTINCT ?g) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"rm-services\")) }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "number of requirements resources"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469780062908",
+          "url": "http://localhost:8890/sparql",
+          "method": "GET",
+          "body": "{}",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>  select ?implemented_non_validated_req where  {   GRAPH ?g      {     ?implemented_non_validated_req ?relationship ?test_case       FILTER NOT EXISTS {       ?implemented_non_validated_req oslc_rm:validatedBy ?test_case      }     {       SELECT DISTINCT ?implemented_non_validated_req         WHERE  {         GRAPH ?g            {           ?component ?implements ?implemented_non_validated_req .           FILTER (regex(str(?implements), \"implements\")) .         }             }     }   } }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "LQ1"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469780718573",
+          "url": "http://localhost:8890/sparql",
+          "method": "GET",
+          "body": "{}",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>  PREFIX  oslc_am:    <http://open-services.net/ns/am#>  SELECT ?s  WHERE  {   GRAPH ?g   {     {       ?s oslc_am:implements <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>     } UNION  {       ?s oslc_cm:changes <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>.     } .   }       }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "LQ2"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469780728841",
+          "url": "http://localhost:8890/sparql",
+          "method": "GET",
+          "body": "{}",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>  PREFIX  oslc_am:    <http://open-services.net/ns/am#>  PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>  select ?change_request where  {   GRAPH ?g   {     {       ?change_request oslc_cm:changes <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>     } UNION  {       ?change_request oslc_cm:changes ?refined_or_refining_req     }     {       SELECT DISTINCT ?refined_or_refining_req         WHERE  {         GRAPH ?g            {           {             <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25> oslc_rm:refines ?refined_or_refining_req            }            UNION            {             ?refined_or_refining_req oslc_rm:refines <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>            }           }       }     }   } }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "LQ3"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1469780736591",
+          "url": "http://localhost:8890/sparql",
+          "method": "GET",
+          "body": "{}",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "PREFIX  rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>  PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>  select ?element ?type where  {   GRAPH ?g      {     ?element rdf:type ?type.     FILTER (regex(str(?type), \"simulink\") || STRSTARTS(str(?type), \"http://open-services.net/ns/rm#\") ).     FILTER NOT EXISTS {       ?change_request oslc_cm:changes ?element     }   } }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "LQ4"
+        },
+        {
+          "_type": "request",
+          "_id": "req_1470039799325",
+          "url": "http://localhost:8890/sparql",
+          "method": "POST",
+          "body": "",
+          "headers": [
+            {
+              "name": "content-type",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "name": "accept",
+              "value": "application/sparql-results+xml"
+            }
+          ],
+          "params": [
+            {
+              "name": "query",
+              "value": "SELECT DISTINCT ?g_req  WHERE {     GRAPH ?g_req     {         ?s ?p ?o.     }FILTER (regex(str(?g_req), \"rm-services\")) }"
+            }
+          ],
+          "authentication": {
+            "_type": "basic",
+            "username": "",
+            "password": ""
+          },
+          "__insomnia": {
+            "format": "json",
+            "panel_width": 0.5
+          },
+          "name": "Requirements resources"
+        }
+      ]
+    }
+  ]
+}

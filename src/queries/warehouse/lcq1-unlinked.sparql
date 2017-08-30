@@ -1,0 +1,22 @@
+PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>
+select ?implemented_non_validated_req
+where
+{
+  GRAPH ?g
+  {
+    ?implemented_non_validated_req ?relationship ?test_case
+      FILTER NOT EXISTS {
+      ?implemented_non_validated_req oslc_rm:validatedBy ?test_case
+    }
+    {
+      SELECT DISTINCT ?implemented_non_validated_req
+      WHERE  {
+        GRAPH ?g
+        {
+          ?component ?implements ?implemented_non_validated_req .
+          FILTER (regex(str(?implements), "implements")) .
+        }
+      }
+    }
+  }
+}

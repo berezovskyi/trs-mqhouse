@@ -1,0 +1,1879 @@
+{
+  "_type": "export",
+  "__export_format": 2,
+  "__export_date": "2016-10-13T14:42:29.333Z",
+  "__export_source": "insomnia.desktop.app:v3.4.1",
+  "resources": [
+    {
+      "modified": 1476369704108,
+      "created": 1471870979674,
+      "parentId": null,
+      "_id": "wrk_is61z8eyYH2JyaSrWUxDP",
+      "name": "Insomnia",
+      "_type": "workspace"
+    },
+    {
+      "name": "Base Environment",
+      "data": {},
+      "modified": 1476368553724,
+      "created": 1475053093158,
+      "parentId": "wrk_is61z8eyYH2JyaSrWUxDP",
+      "_id": "env_itmoiyw6hvqzDrtp4x9aU",
+      "_type": "environment"
+    },
+    {
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "creation": "2016-10-13T14:26:44.494Z",
+          "key": "query",
+          "value": "PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+oslc_cm%3A+%3Chttp%3A%2F%2Fopen-services.net%2Fns%2Fcm%23%3E+PREFIX+oslc_rm%3A+%3Chttp%3A%2F%2Fopen-services.net%2Fns%2Frm%23%3E+SELECT+%3Felement+%3Ftype+WHERE+%7B+++GRAPH+%3Fg1+%7B+++++FILTER+NOT+EXISTS+%7B+++++++%3Fchange_request+oslc_cm%3Achanges+%3Felement.+++++%7D+++++%7B+++++++++GRAPH+%3Fg2+%7B+++++++++++%3Felement+rdf%3Atype+%3Ftype.+++++++++++FILTER+%28STRSTARTS%28str%28%3Ftype%29%2C+%22http%3A%2F%2Fopen-services.net%2Fns%2Frm%23%22%29+%29.+++++++++%7D++++++++++++++%7D+++++UNION+++++%7B+++++++++GRAPH+%3Fg3+%7B+++++++++++%3Felement+rdf%3Atype+%3Ftype.+++++++++++FILTER+%28regex%28str%28%3Ftype%29%2C+%22simulink%22%29+%29.+++++++++%7D+++++%7D+++%7D++%7D",
+          "path": "/openrdf-workbench",
+          "expires": "2016-11-12T14:41:54.000Z",
+          "hostOnly": true,
+          "domain": "localhost",
+          "lastAccessed": "2016-10-13T14:41:57.438Z"
+        },
+        {
+          "creation": "2016-10-13T14:26:44.495Z",
+          "key": "Last-Modified",
+          "value": "1476369705000",
+          "domain": "localhost",
+          "path": "/openrdf-workbench",
+          "hostOnly": true,
+          "lastAccessed": "2016-10-13T14:41:55.989Z"
+        },
+        {
+          "creation": "2016-10-13T14:37:27.969Z",
+          "key": "total_result_count",
+          "value": "34",
+          "path": "/openrdf-workbench",
+          "expires": "2016-11-12T14:41:55.000Z",
+          "hostOnly": true,
+          "domain": "localhost",
+          "lastAccessed": "2016-10-13T14:41:57.438Z"
+        }
+      ],
+      "modified": 1476369717484,
+      "created": 1475053093159,
+      "parentId": "wrk_is61z8eyYH2JyaSrWUxDP",
+      "_id": "jar_itmoiyw7ZGHXqNfW8TGhk",
+      "_type": "cookie_jar"
+    },
+    {
+      "name": "TripleStore",
+      "environment": {},
+      "modified": 1476368553724,
+      "created": 1475053068363,
+      "parentId": "wrk_is61z8eyYH2JyaSrWUxDP",
+      "_id": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_type": "request_group"
+    },
+    {
+      "name": "TripleStore-Publication-querySet-fuseki",
+      "environment": {},
+      "modified": 1476368553730,
+      "created": 1475053068365,
+      "parentId": "wrk_is61z8eyYH2JyaSrWUxDP",
+      "_id": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_type": "request_group"
+    },
+    {
+      "name": "New Environment",
+      "data": {},
+      "modified": 1476369402301,
+      "created": 1476369402301,
+      "parentId": "env_itmoiyw6hvqzDrtp4x9aU",
+      "_id": "env_iu8g81j16Kh9GFGkXWjmTfgK",
+      "_type": "environment"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_native",
+      "name": "GET ALL",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "accept",
+          "value": "application/n-quads"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553725,
+      "created": 1475053068573,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1462809718262",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:3030/fuseki/tests/update",
+      "name": "DROP ALL",
+      "method": "POST",
+      "body": "DROP ALL",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/sparql-update"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553730,
+      "created": 1475053068573,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1462867901007",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of graphs",
+      "method": "POST",
+      "body": "SELECT ( COUNT(DISTINCT ?g) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553732,
+      "created": 1475053068573,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1462868800912",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of trips(fuseki)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(*) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553808,
+      "created": 1475053068573,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1462868979304",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of graphs stardog",
+      "method": "POST",
+      "body": "SELECT ( COUNT(DISTINCT ?g) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553824,
+      "created": 1475053068574,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463060234313",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "Select all change requests changing component x (stardog)",
+      "method": "POST",
+      "body": "SELECT ?s \r\nWHERE \r\n{\r\n GRAPH ?g \r\n\r\n{\r\n?s ?p ?o .FILTER (regex(str(?s), \"/changeRequests/\") && regex(str(?p), \"changes\") && regex(str(?o), \"model11/lines/Subsystem2::In2::outport::1\")) .\r\n}\r\n    \r\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553841,
+      "created": 1475053068574,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463060345292",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_native",
+      "name": "Select all change requests changing component x (sesame)",
+      "method": "POST",
+      "body": "query=SELECT%20%3Fs%20%0AWHERE%20%0A%7B%0A%20GRAPH%20%3Fg%20%0A%0A%7B%0A%3Fs%20%3Fp%20%3Fo%20.FILTER%20(regex(str(%3Fs)%2C%20%22%2FchangeRequests%2F%22)%20%26%26%20regex(str(%3Fp)%2C%20%22changes%22)%20%26%26%20regex(str(%3Fo)%2C%20%22model11%2Flines%2FSubsystem2%3A%3AIn2%3A%3Aoutport%3A%3A1%22))%20.%0A%7D%0A%20%20%20%20%0A%7D",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553855,
+      "created": 1475053068574,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463061590911",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_native",
+      "name": "number of graphs sesame",
+      "method": "POST",
+      "body": "query=SELECT%20(%20COUNT(DISTINCT%20%3Fg)%20as%20%3Fcount)%0A%0AWHERE%0A%7B%0A%20%20%20%20GRAPH%20%3Fg%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%3Fs%20%3Fp%20%3Fo%0A%20%20%20%20%7D%0A%7D",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553858,
+      "created": 1475053068574,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463062645651",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of DISTINCT trips",
+      "method": "POST",
+      "body": "SELECT ( COUNT(DISTINCT *) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553858,
+      "created": 1475053068574,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463126244468",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of DISTINCT trips (Stardog)",
+      "method": "POST",
+      "body": "SELECT ( COUNT(*) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553858,
+      "created": 1475053068574,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463126260839",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of trips (Stardog)",
+      "method": "POST",
+      "body": "SELECT ( COUNT(*) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553858,
+      "created": 1475053068574,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463132202149",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/bigdata/namespace/ldr/sparql",
+      "name": "number of trips (Blazegraph)",
+      "method": "POST",
+      "body": "SELECT ( COUNT(*) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463145196380",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/bigdata/namespace/ldr/sparql",
+      "name": "Select all change requests changing component x (blazegraph)",
+      "method": "POST",
+      "body": "SELECT ?s \r\nWHERE \r\n{\r\n GRAPH ?g \r\n\r\n{\r\n?s ?p ?o .FILTER (regex(str(?s), \"/changeRequests/\") && regex(str(?p), \"changes\") && regex(str(?o), \"model11/lines/Subsystem2::In2::outport::1\")) .\r\n}\r\n    \r\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463145630245",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8890/sparql",
+      "name": "Select all change requests changing component x (virtuoso) ",
+      "method": "POST",
+      "body": "query=SELECT%20%3Fs%20%0AWHERE%20%0A%7B%0A%20GRAPH%20%3Fg%20%0A%0A%7B%0A%3Fs%20%3Fp%20%3Fo%20.FILTER%20(regex(str(%3Fs)%2C%20%22%2FchangeRequests%2F%22)%20%26%26%20regex(str(%3Fp)%2C%20%22changes%22)%20%26%26%20regex(str(%3Fo)%2C%20%22model11%2Flines%2FSubsystem2%3A%3AIn2%3A%3Aoutport%3A%3A1%22))%20.%0A%7D%0A%20%20%20%20%0A%7D",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463486407329",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of simulink resources (fuseki)",
+      "method": "POST",
+      "body": "SELECT ( COUNT(DISTINCT ?g) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o. FILTER (regex(str(?s), \"simulink\")).\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463491014451",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of bugzilla resources (fuseki) ",
+      "method": "POST",
+      "body": "SELECT ( COUNT(DISTINCT ?g) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o. FILTER (regex(str(?s), \"bugzilla\")).\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463491032247",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/bigdata/namespace/ldr/sparql",
+      "name": "number of simulink resources (blazegraph)",
+      "method": "POST",
+      "body": "SELECT ( COUNT(DISTINCT ?g) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o. FILTER (regex(str(?s), \"simulink\")).\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463492475033",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of simulink resources (Stardog)",
+      "method": "POST",
+      "body": "SELECT ( COUNT(DISTINCT ?g) as ?count)\n\nWHERE\n{\n    GRAPH ?g\n    {\n        ?s ?p ?o. FILTER (regex(str(?s), \"simulink\")).\n    }\n}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/sparql-query"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463492561585",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8890/sparql",
+      "name": "number of simulink resources (virtuoso) ",
+      "method": "POST",
+      "body": "query=SELECT%20(%20COUNT(DISTINCT%20%3Fg)%20as%20%3Fcount)%0A%0AWHERE%0A%7B%0A%20%20%20%20GRAPH%20%3Fg%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%3Fs%20%3Fp%20%3Fo.%20FILTER%20(regex(str(%3Fs)%2C%20%22simulink%22)).%0A%20%20%20%20%7D%0A%7D",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1463492643292",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of bugzilla quads(fuseki) ",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(*) as ?count)   WHERE {       GRAPH ?g     {         ?s ?p ?o. FILTER (regex(str(?s), \"bugzilla\")).     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553859,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468505147327",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of simulink quads(fuseki) ",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(*) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o. FILTER (regex(str(?s), \"simulink\")).     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553860,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468505167572",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of bugzilla quads(stardog)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": " SELECT (count(*) as ?count)   WHERE {      GRAPH ?g     {           ?s ?p ?o.   FILTER (contains(str(?g), \"bugzilla\") ).       } }   LIMIT 25"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553860,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468506522131",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of simulink quads(stardog) ",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": " SELECT (count(*) as ?count)   WHERE {      GRAPH ?g     {           ?s ?p ?o.   FILTER (contains(str(?g), \"simulink\") ).       } }   LIMIT 25"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553860,
+      "created": 1475053068576,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468506538196",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of trips(stardog)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(DISTINCT *) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553860,
+      "created": 1475053068577,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468506566488",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of non bugz and sim trips(stardog)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(DISTINCT *) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o. FILTER (!regex(str(?s), \"simulink\") || !regex(str(?s), \"bugzilla\") ).     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553860,
+      "created": 1475053068577,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468506720905",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "non bugz and sim trips(stardog)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": " SELECT ?g   WHERE {      GRAPH ?g     {           ?s ?p ?o.   FILTER (!contains(str(?g), \"simulink\") && !contains(str(?g), \"bugzilla\")).       } }   LIMIT 25"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553860,
+      "created": 1475053068577,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468506904499",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:5820/LDR/query",
+      "name": "number of requirements quads(stardog)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": " SELECT (count(*) as ?count)   WHERE {      GRAPH ?g     {           ?s ?p ?o.   FILTER (contains(str(?g), \"rm-services\") ).       } } "
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553860,
+      "created": 1475053068577,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468509133416",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of requirements (fuseki) ",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT( count(?g)as ?count) WHERE {          GRAPH ?g     {         ?s ?p ?o. FILTER (contains(str(?s), \"rm-services\")).     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553860,
+      "created": 1475053068577,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468509378193",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of requirements quads(fuseki)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT (count(*)as ?count)  WHERE {  GRAPH ?g     {           ?s ?p ?o.   }{ SELECT ?g  WHERE {      GRAPH ?g     {           ?s ?p ?o.        FILTER (contains(str(?s), \"rm-services\") ).       } }}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553864,
+      "created": 1475053068577,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468570767944",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "Requirements quads(fuseki) ",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT * WHERE {  GRAPH ?g     {           ?s ?p ?o.   }{ SELECT ?g  WHERE {      GRAPH ?g     {           ?s ?p ?o.        FILTER (contains(str(?s), \"rm-services\") ).       } }}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "Content-type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553867,
+      "created": 1475053068577,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_1468579152385",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:3030/fuseki/simulink/",
+      "name": "GET ALL Simulink",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "accept",
+          "value": "application/n-quads"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553867,
+      "created": 1475587139276,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_itvihfikUAd6geBZzS4a2vhD",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:3030/fuseki/ReqIf/",
+      "name": "GET ALL ReqIf",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "accept",
+          "value": "application/n-quads"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553868,
+      "created": 1475587158946,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_itvihuoyEDpNhvQAJ83dHSFy",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:3030/fuseki/Bugzilla/",
+      "name": "GET ALL Bugzilla",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "accept",
+          "value": "application/n-quads"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553869,
+      "created": 1475587161516,
+      "parentId": "fdr_itmoifrfMB7A5VytfcJvF",
+      "_id": "req_itvihwocavKHXZhExJxXJVWd",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "SELECT ALL change requests",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT DISTINCT ?s  WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER regex(str(?s), \"/changeRequests/\") . }      }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553870,
+      "created": 1475053068687,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778194771",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/openrdf-sesame/repositories/ldr_native/statements",
+      "name": "Number of change requests",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(DISTINCT ?g) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"bugzilla\")) }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        },
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "",
+          "value": ""
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476369426824,
+      "created": 1475053068687,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778231965",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of trips",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(*) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553870,
+      "created": 1475053068687,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778236235",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of simulink resources",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(DISTINCT ?g) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"simulink\")) }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778240686",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of graphs",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(DISTINCT ?g) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778284661",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "requests that changed component x",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>   select ?implemented_req where  { FILTER NOT EXISTS { ?implemented_req oslc_rm:validatedBy ?test_case } { SELECT DISTINCT ?implemented_req   WHERE  {  GRAPH ?g    {  ?component ?implements ?implemented_req .FILTER (regex(str(?implements), \"implements\")) . }      } } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778288816",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "components changed by request x",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT DISTINCT ?s ?p ?o WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER (regex(str(?o), \"changeRequests/11\") && regex(str(?p), \"changed_by\")) . }      }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778293580",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "components changed by some request",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT DISTINCT ?s  WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER (regex(str(?p), \"changed_by\")) . }      }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778301147",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "requests that change some component",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT DISTINCT ?s WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER (regex(str(?p), \"changes\")) . }      }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778311323",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "DESCRIBE ALL",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "DESCRIBE ?s  WHERE  {  GRAPH ?g   { ?s ?p ?o }      }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778313543",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "CONSTRUCTALL",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "CONSTRUCT {?s ?p ?o} WHERE  {  GRAPH ?g   { ?s ?p ?o }      }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469778316051",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of requirements resources",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(DISTINCT ?g) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"rm-services\")) }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553871,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469779467327",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/openrdf-workbench/repositories/ldr_native/query",
+      "name": "LQ1",
+      "method": "GET",
+      "body": "=&=",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX  oslc_rm:    <http://open-services.net/ns/rm#> PREFIX  oslc_am:    <http://open-services.net/ns/am#> PREFIX  oslc_cm:    <http://open-services.net/ns/cm#> select DISTINCT ?implemented_non_changed_req where  {   GRAPH ?g1      {     FILTER NOT EXISTS {       ?change_request oslc_cm:changes ?implemented_non_changed_req         }       GRAPH ?g3            {         ?component oslc_am:implements ?implemented_non_changed_req .       }    } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476369543031,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469780062908",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/openrdf-workbench/repositories/ldr_native/query",
+      "name": "LQ2",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX oslc_cm: <http://open-services.net/ns/cm#> PREFIX oslc_am: <http://open-services.net/ns/am#> SELECT DISTINCT ?s WHERE {   {     GRAPH ?g      {       ?s oslc_am:implements <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>     } .   }UNION {     GRAPH ?g1      {       ?s oslc_cm:changes <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>.     }    } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368699873,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469780718573",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/openrdf-workbench/repositories/ldr_native/query",
+      "name": "LQ3",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>   PREFIX  oslc_am:    <http://open-services.net/ns/am#>   PREFIX  oslc_rm:    <http://open-services.net/ns/rm#> select DISTINCT ?change_request where  {   GRAPH ?g   {     {       ?change_request oslc_cm:changes <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>          } UNION  {       ?change_request oslc_cm:changes ?refined_or_refining_req.         {           GRAPH ?g2 {             <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>               oslc_rm:refines ?refined_or_refining_req           }         } UNION {           GRAPH ?g1 {             ?refined_or_refining_req oslc_rm:refines <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>           }         }                      }     }   }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368701687,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469780728841",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/openrdf-workbench/repositories/ldr_native/query",
+      "name": "LQ4",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX oslc_cm: <http://open-services.net/ns/cm#> PREFIX oslc_rm: <http://open-services.net/ns/rm#> SELECT ?element ?type WHERE {   GRAPH ?g1 {     FILTER NOT EXISTS {       ?change_request oslc_cm:changes ?element.     }     {         GRAPH ?g2 {           ?element rdf:type ?type.           FILTER (STRSTARTS(str(?type), \"http://open-services.net/ns/rm#\") ).         }              }     UNION     {         GRAPH ?g3 {           ?element rdf:type ?type.           FILTER (regex(str(?type), \"simulink\") ).         }     }   }  }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368703960,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1469780736591",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "Requirements resources",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT DISTINCT ?g_req  WHERE {     GRAPH ?g_req     {         ?s ?p ?o.     }FILTER (regex(str(?g_req), \"rm-services\")) }"
+        },
+        {
+          "name": "",
+          "value": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553872,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1470039799325",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "Number of change requests quads",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(*) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"bugzilla\")) }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553872,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1471345105681",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of simulink quads",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(*) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"simulink\")) }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553872,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1471345112582",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "number of requirements quads",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT ( COUNT(*) as ?count)  WHERE {     GRAPH ?g     {         ?s ?p ?o.     }FILTER (regex(str(?g), \"rm-services\")) }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553872,
+      "created": 1475053068688,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_1471345146686",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "SELECT representation of alll requirements resources",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  DESCRIBE ?s ?null_node  WHERE {   GRAPH ?g   {     ?s rdf:type ?rdf_type.     ?s ?p ?null_node.          FILTER regex(str(?rdf_type), \"http://mathworks.com/simulink/r\") .   } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/n-quads"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553872,
+      "created": 1475580698322,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_itvendn6FrVRZMxCR9n8G7FB",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "SELECT representation of alll change requests (Copy)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "SELECT DISTINCT ?s  WHERE  {  GRAPH ?g   { ?s ?p ?o .FILTER regex(str(?s), \"/changeRequests/\") . }      }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/n-quads"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553872,
+      "created": 1475580725116,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_itvenybgBnDQPwHPzt6J7Cxm",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/rdf4j-server/repositories/ldr_nativequery",
+      "name": "SELECT representation of alll simulink blocks (Copy)",
+      "method": "POST",
+      "body": "",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  CONSTRUCT {   ?s ?p ?o.   ?null_node ?p_null_node ?o_null_node } WHERE {   GRAPH ?g   {     ?s rdf:type ?rdf_type.     ?s ?p ?null_node.     FILTER regex(str(?rdf_type), \"http://mathworks.com/simulink/r\") .   } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/n-quads"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553872,
+      "created": 1475580745337,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_itveodx5edguyAh7tVNcqPjg",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:3030/fuseki/Bugzilla/query",
+      "name": "LQ1 local federated",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX  oslc_rm:    <http://open-services.net/ns/rm#> PREFIX  oslc_am:    <http://open-services.net/ns/am#> PREFIX  oslc_cm:    <http://open-services.net/ns/cm#> select DISTINCT ?implemented_non_changed_req where  {   GRAPH ?g1      {     FILTER NOT EXISTS {       ?change_request oslc_cm:changes ?implemented_non_changed_req         }     SERVICE <http://localhost:8080/fuseki/simulink/query> {       GRAPH ?g3            {         ?component oslc_am:implements ?implemented_non_changed_req .       }     }     } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553873,
+      "created": 1476088105092,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_iu3sqv7o2BDYvRVpBbmmzZcB",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:3030/fuseki/simulink/query",
+      "name": "LQ2 local federated",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX oslc_cm: <http://open-services.net/ns/cm#> PREFIX oslc_am: <http://open-services.net/ns/am#> SELECT DISTINCT ?s WHERE {   {     GRAPH ?g      {       ?s oslc_am:implements <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>     } .   }UNION {   SERVICE <http://localhost:8080/fuseki/Bugzilla/query> {     GRAPH ?g1      {       ?s oslc_cm:changes <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>.     }   }    } }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553873,
+      "created": 1476262568693,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_iu6om86ttzSzjeanG98zhk3Q",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:3030/fuseki/Bugzilla/query",
+      "name": "LQ3 local federated",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>   PREFIX  oslc_am:    <http://open-services.net/ns/am#>   PREFIX  oslc_rm:    <http://open-services.net/ns/rm#> select DISTINCT ?change_request where  {   GRAPH ?g   {     {       ?change_request oslc_cm:changes <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>          } UNION  {       ?change_request oslc_cm:changes ?refined_or_refining_req.       SERVICE <http://localhost:8080/fuseki/ReqIf/query> {         {           GRAPH ?g2 {             <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>               oslc_rm:refines ?refined_or_refining_req           }         } UNION {           GRAPH ?g1 {             ?refined_or_refining_req oslc_rm:refines <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>           }         }             }          }     }   }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553873,
+      "created": 1476262585262,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_iu6omkz28EGjT3GUuzV2Rc9S",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:3030/fuseki/Bugzilla/query",
+      "name": "LQ4 local federated",
+      "method": "GET",
+      "body": "{}",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX oslc_cm: <http://open-services.net/ns/cm#> PREFIX oslc_rm: <http://open-services.net/ns/rm#> SELECT ?element ?type WHERE {   GRAPH ?g1 {     FILTER NOT EXISTS {       ?change_request oslc_cm:changes ?element.     }     {       SERVICE <http://localhost:8080/fuseki/ReqIf/query> {         GRAPH ?g2 {           ?element rdf:type ?type.           FILTER (STRSTARTS(str(?type), \"http://open-services.net/ns/rm#\") ).         }                }     }     UNION     {       SERVICE <http://localhost:8080/fuseki/simulink/query> {         GRAPH ?g3 {           ?element rdf:type ?type.           FILTER (regex(str(?type), \"simulink\") ).         }       }     }   }  }"
+        }
+      ],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "application/x-www-form-urlencoded"
+        },
+        {
+          "name": "accept",
+          "value": "application/sparql-results+xml"
+        }
+      ],
+      "authentication": {
+        "username": "",
+        "password": ""
+      },
+      "modified": 1476368553873,
+      "created": 1476262599037,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_iu6omvlpuZcf7SkJYXkF7X7M",
+      "contentType": "application/json",
+      "_type": "request"
+    },
+    {
+      "url": "http://localhost:8080/fuseki/Bugzilla",
+      "name": "Bugzila as N Quads",
+      "method": "GET",
+      "body": "",
+      "parameters": [],
+      "headers": [
+        {
+          "name": "accept",
+          "value": "application/n-quads"
+        }
+      ],
+      "authentication": {},
+      "modified": 1476368553873,
+      "created": 1476281053359,
+      "parentId": "fdr_itmoifrhyhYZeRBquNNHd",
+      "_id": "req_iu6zmf1r6dHSFT3J8xFEAKBN",
+      "_type": "request"
+    }
+  ]
+}

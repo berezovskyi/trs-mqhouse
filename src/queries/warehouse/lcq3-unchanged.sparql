@@ -1,0 +1,15 @@
+PREFIX  rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>
+PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>
+select ?element ?type
+where
+{
+  GRAPH ?g
+  {
+    ?element rdf:type ?type.
+    FILTER (regex(str(?type), "simulink") || STRSTARTS(str(?type), "http://open-services.net/ns/rm#") ).
+    FILTER NOT EXISTS {
+      ?change_request oslc_cm:changes ?element
+    }
+  }
+}

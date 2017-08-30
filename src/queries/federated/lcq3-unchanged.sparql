@@ -1,0 +1,15 @@
+PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>
+PREFIX  oslc_am:    <http://open-services.net/ns/am#>
+PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>
+select DISTINCT ?implemented_non_changed_req where  {
+  GRAPH ?g1      {
+    FILTER NOT EXISTS {
+      ?change_request oslc_cm:changes ?implemented_non_changed_req
+    }
+    SERVICE <http://witten:8080/fuseki/simulink/query> {
+      GRAPH ?g3            {
+        ?component oslc_am:implements ?implemented_non_changed_req .
+      }
+    }
+  }
+}

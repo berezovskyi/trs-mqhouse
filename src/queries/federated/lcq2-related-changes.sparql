@@ -1,0 +1,24 @@
+PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>
+PREFIX  oslc_am:    <http://open-services.net/ns/am#>
+PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>
+select DISTINCT ?change_request where  {
+  GRAPH ?g   {
+    {
+      ?change_request oslc_cm:changes <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>
+    } UNION  {
+      ?change_request oslc_cm:changes ?refined_or_refining_req.
+      SERVICE <http://witten:8080/fuseki/ReqIf/query> {
+        {
+          GRAPH ?g2 {
+            <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>
+              oslc_rm:refines ?refined_or_refining_req
+          }
+        } UNION {
+          GRAPH ?g1 {
+            ?refined_or_refining_req oslc_rm:refines <http://git.md.kth.se:8081/pror/services/rm-services/ProR_Search_Spec.reqif/resources/requirements/REQ-25>
+          }
+        }
+      }
+    }
+  }
+}

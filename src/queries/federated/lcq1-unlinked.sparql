@@ -1,0 +1,27 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX oslc_cm: <http://open-services.net/ns/cm#>
+PREFIX oslc_rm: <http://open-services.net/ns/rm#>
+SELECT ?element ?type WHERE {
+  GRAPH ?g1 {
+    FILTER NOT EXISTS {
+      ?change_request oslc_cm:changes ?element.
+    }
+    {
+      SERVICE <http://witten:8080/fuseki/ReqIf/query> {
+        GRAPH ?g2 {
+          ?element rdf:type ?type.
+          FILTER (STRSTARTS(str(?type), "http://open-services.net/ns/rm#") ).
+        }
+      }
+    }
+    UNION
+    {
+      SERVICE <http://witten:8080/fuseki/simulink/query> {
+        GRAPH ?g3 {
+          ?element rdf:type ?type.
+          FILTER (regex(str(?type), "simulink") ).
+        }
+      }
+    }
+  }
+}

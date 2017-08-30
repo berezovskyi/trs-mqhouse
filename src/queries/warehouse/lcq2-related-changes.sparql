@@ -1,0 +1,30 @@
+PREFIX  oslc_cm:    <http://open-services.net/ns/cm#>
+PREFIX  oslc_am:    <http://open-services.net/ns/am#>
+PREFIX  oslc_rm:    <http://open-services.net/ns/rm#>
+select ?change_request
+where
+{
+  GRAPH ?g
+  {
+    {
+      ?change_request oslc_cm:changes <req_x>
+    } UNION  {
+      ?change_request oslc_cm:changes ?refined_or_refining_req
+    }
+    {
+      SELECT DISTINCT ?refined_or_refining_req
+      WHERE  {
+        GRAPH ?g
+        {
+          {
+            <req_x> oslc_rm:refines ?refined_or_refining_req
+          }
+          UNION
+          {
+            ?refined_or_refining_req oslc_rm:refines <req_x>
+          }
+        }
+      }
+    }
+  }
+}
